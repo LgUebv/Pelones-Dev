@@ -6,7 +6,8 @@ FROM php:8.4-apache
 RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
 
 # 3. Copiamos los archivos a la carpeta del servidor
-COPY ./src /var/www/html/
+# Modificacion
+COPY . /var/www/html/
 
 # 4. Permisos para que Apache no se ponga fresa
 RUN chown -R www-data:www-data /var/www/html
