@@ -1,6 +1,6 @@
 <?php
 // Incluimos los datos de configuracion
-include_once "config.php";
+include_once __DIR__ . "/config.php";
 
 class ConexioBaseDatos
 {

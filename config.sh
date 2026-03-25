@@ -18,6 +18,7 @@ docker run -d \
     --network red_Practica21 \
     -p 3305:3306 \
     -v practica21_db_data:/var/lib/mysql \
+    -v "$(pwd)/db_sql:/docker-entrypoint-initdb.d" \
     -e MYSQL_ROOT_PASSWORD=root \
     -e MYSQL_DATABASE=practica21 \
     mysql:latest
@@ -28,4 +29,5 @@ docker run -d \
     --name contenedor_php_p21 \
     --network red_Practica21 \
     -p 8080:80 \
+    -v "$(pwd):/var/www/html" \
     server-php
